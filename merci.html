@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Merci – Conciergerie Privée Deauville</title>
+<meta name="robots" content="noindex">
+<style>
+html,body{margin:0;background:#f6f7f9;color:#222831;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+main{max-width:640px;margin:0 auto;padding:48px 16px;display:flex;flex-direction:column;gap:16px}
+.stripes{height:8px;border-radius:2px;background:repeating-linear-gradient(90deg,#222831 0 28px,#e9533b 28px 56px,#4a76ad 56px 84px,#c9d2de 84px 112px)}
+h1{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:400;font-size:clamp(2rem,6vw,2.6rem);margin:8px 0 0}
+p{margin:0;color:#5d6672;font-size:1.05rem}
+a.btn{align-self:flex-start;margin-top:8px;text-decoration:none;background:#d0432b;color:#fff;padding:10px 18px;border-radius:999px;font-weight:600}
+[lang="en"]{display:none}.en [lang="en"]{display:block}.en [lang="fr"]{display:none}
+</style>
+</head>
+<body>
+<main id="m">
+<div class="stripes" aria-hidden="true"></div>
+<h1><span lang="fr">Merci pour votre commande !</span><span lang="en">Thank you for your order!</span></h1>
+<p lang="fr">Votre paiement est bien reçu. Votre facture vous est envoyée par e-mail dans quelques minutes, et nous revenons vers vous sous 24 h pour confirmer chaque prestation. Pour un massage, l'horaire exact est convenu avec vous par WhatsApp.</p>
+<p lang="en">Your payment has been received. Your invoice will be emailed to you within a few minutes, and we will get back to you within 24 hours to confirm each service. For a massage, the exact time is arranged with you on WhatsApp.</p>
+<p lang="fr">Une question ? <a href="mailto:extras@conciergeriepriveedeauville.fr">extras@conciergeriepriveedeauville.fr</a></p>
+<p lang="en">Any question? <a href="mailto:extras@conciergeriepriveedeauville.fr">extras@conciergeriepriveedeauville.fr</a></p>
+<a class="btn" href="https://extras.conciergeriepriveedeauville.fr/"><span lang="fr">Retour au catalogue</span><span lang="en">Back to the catalogue</span></a>
+</main>
+<script>
+(function(){var l=null;try{l=localStorage.getItem("cpd-lang")}catch(e){}if(!l)l=((navigator.language||"fr").slice(0,2)==="fr")?"fr":"en";if(l==="en")document.getElementById("m").classList.add("en");try{sessionStorage.removeItem("cpd-cart")}catch(e){}})();
+</script>
+</body>
+</html>
