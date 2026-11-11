@@ -22,7 +22,7 @@ a.btn{align-self:flex-start;margin-top:8px;text-decoration:none;background:#d043
 <main id="m">
 <div class="stripes" aria-hidden="true"></div>
 <h1><span lang="fr">Merci pour votre commande !</span><span lang="en">Thank you for your order!</span></h1>
-<p lang="fr">Votre paiement est bien reçu. Votre facture vous est envoyée par e-mail dans quelques minutes, et nous revenons vers vous sous 24 h pour confirmer chaque prestation. Pour un massage, l'horaire exact est convenu avec vous par WhatsApp.</p>
+<p lang="fr">Votre paiement est bien reçu. Votre facture vous est envoyée par e-mail dans quelques minutes, et nous revenons vers vous sous 24h pour confirmer chaque prestation. Pour un massage, l'horaire exact est convenu avec vous par WhatsApp.</p>
 <p lang="en">Your payment has been received. Your invoice will be emailed to you within a few minutes, and we will get back to you within 24 hours to confirm each service. For a massage, the exact time is arranged with you on WhatsApp.</p>
 <p lang="fr">Une question ? <a href="mailto:extras@conciergeriepriveedeauville.fr">extras@conciergeriepriveedeauville.fr</a></p>
 <p lang="en">Any question? <a href="mailto:extras@conciergeriepriveedeauville.fr">extras@conciergeriepriveedeauville.fr</a></p>
@@ -30,6 +30,28 @@ a.btn{align-self:flex-start;margin-top:8px;text-decoration:none;background:#d043
 </main>
 <script>
 (function(){var l=null;try{l=localStorage.getItem("cpd-lang")}catch(e){}if(!l)l=((navigator.language||"fr").slice(0,2)==="fr")?"fr":"en";if(l==="en")document.getElementById("m").classList.add("en");try{sessionStorage.removeItem("cpd-cart")}catch(e){}})();
+</script>
+<div id="cpd-ck" class="cpd-ck" role="region" aria-label="Cookies" hidden>
+<p><span data-l="fr">Ce site n'utilise ni cookies publicitaires ni mesure d'audience. Seuls vos choix (type de logement, langue, sélection) sont enregistrés sur votre appareil pour le bon fonctionnement du catalogue. <a href="https://extras.conciergeriepriveedeauville.fr/cgv.html#donnees">En savoir plus</a></span><span data-l="en">This site uses no advertising or analytics cookies. Only your choices (rental type, language, selection) are stored on your device so the catalogue works. <a href="https://extras.conciergeriepriveedeauville.fr/cgv.html#donnees">Learn more</a></span></p>
+<button type="button" id="cpd-ck-ok"><span data-l="fr">J'ai compris</span><span data-l="en">Got it</span></button>
+</div>
+<style>
+.cpd-ck{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;max-width:720px;margin:0 auto;background:#222831;color:#f6f7f9;border-radius:14px;padding:14px 16px;display:flex;gap:14px;align-items:center;box-shadow:0 8px 30px rgba(0,0,0,.25);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.cpd-ck[hidden]{display:none}
+.cpd-ck p{margin:0;flex:1;color:#f6f7f9;font-size:14px}
+.cpd-ck a{color:#f6f7f9;text-decoration:underline}
+.cpd-ck button{flex:none;border:0;border-radius:999px;background:#d0432b;color:#fff;font:600 14px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:11px 18px;cursor:pointer}
+.cpd-ck [data-l="en"]{display:none}
+.cpd-ck.en [data-l="en"]{display:inline}.cpd-ck.en [data-l="fr"]{display:none}
+@media (max-width:560px){.cpd-ck{flex-direction:column;align-items:stretch}.cpd-ck button{width:100%}}
+</style>
+<script>
+(function(){if(window.parent!==window)return;var b=document.getElementById("cpd-ck");if(!b)return;
+var seen=null;try{seen=localStorage.getItem("cpd-cookies")}catch(e){}if(seen)return;
+function lang(){var l=null;try{l=localStorage.getItem("cpd-lang")}catch(e){}if(!l)l=((navigator.language||"fr").slice(0,2)==="fr")?"fr":"en";var c=document.getElementById("cpd");if(c)l=c.classList.contains("is-en")?"en":"fr";b.classList.toggle("en",l==="en")}
+lang();document.addEventListener("click",function(e){if(e.target.closest&&e.target.closest("#cpd-fr,#cpd-en"))setTimeout(lang,0)});
+b.hidden=false;
+document.getElementById("cpd-ck-ok").addEventListener("click",function(){b.hidden=true;try{localStorage.setItem("cpd-cookies","1")}catch(e){}})})();
 </script>
 </body>
 </html>
