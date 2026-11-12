@@ -275,7 +275,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 <p class="hint"><span lang="fr">En envoyant votre demande, vous acceptez <a href="https://extras.conciergeriepriveedeauville.fr/cgv.html" target="_blank" rel="noopener">nos CGV</a>.</span><span lang="en">By sending your request, you accept <a href="https://extras.conciergeriepriveedeauville.fr/cgv.html" target="_blank" rel="noopener">our terms and conditions</a>.</span></p>
 </form>
 </section>
-<footer class="foot"><p><span lang="fr">Prix TTC. Services soumis à disponibilité.</span><span lang="en">Prices include VAT. Services subject to availability.</span></p><p><a href="https://extras.conciergeriepriveedeauville.fr/cgv.html" target="_blank" rel="noopener"><span lang="fr">Conditions générales de vente</span><span lang="en">Terms and conditions</span></a> · <span lang="fr">Médiateur de la consommation : CM2C</span><span lang="en">Consumer mediator: CM2C</span> · <a href="mailto:extras@conciergeriepriveedeauville.fr">extras@conciergeriepriveedeauville.fr</a></p></footer>
+<footer class="foot"><p><span lang="fr">Prix TTC. Services soumis à disponibilité.</span><span lang="en">Prices include VAT. Services subject to availability.</span></p><p><a href="https://extras.conciergeriepriveedeauville.fr/cgv.html" target="_blank" rel="noopener"><span lang="fr">Conditions générales de vente</span><span lang="en">Terms and conditions</span></a> · <span lang="fr">Médiateur de la consommation : CM2C</span><span lang="en">Consumer mediator: CM2C</span> · <a href="mailto:extras@conciergeriepriveedeauville.fr">extras@conciergeriepriveedeauville.fr</a> · <a href="https://wa.me/33659317272" target="_blank" rel="noopener">WhatsApp 06 59 31 72 72</a></p></footer>
 </div>
 <div class="cart-bar" id="cpd-bar" hidden><span id="cpd-bar-txt"></span><button type="button" class="book open-co"><span lang="fr">Valider ma demande</span><span lang="en">Review my request</span><span aria-hidden="true">→</span></button></div>
 </div>
@@ -434,6 +434,26 @@ window.addEventListener("load",send);window.addEventListener("resize",send);
 if(window.ResizeObserver)new ResizeObserver(send).observe(document.body);
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href^='#']");if(a){var t=document.querySelector(a.getAttribute("href"));if(t){e.preventDefault();window.parent.postMessage({cpdScroll:t.getBoundingClientRect().top+window.scrollY},"*")}}});
 send();})();
+</script>
+<a id="cpd-wa" class="cpd-wa" href="https://wa.me/33659317272" target="_blank" rel="noopener" aria-label="WhatsApp" hidden><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.6l-.4-.3-3.8 1.2 1.2-3.7-.3-.4a10.5 10.5 0 0 1-1.7-5.8C5.1 9.9 10 5.2 16 5.2s10.9 4.7 10.9 10.6S22 26.4 16 26.4zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.7-.4z"/></svg><span data-l="fr">Nous contacter</span><span data-l="en">Contact us</span></a>
+<style>
+.cpd-wa{position:fixed;right:16px;bottom:16px;z-index:70;display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:12px 18px 12px 14px;font:600 15px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.2);transition:bottom .2s}
+.cpd-wa[hidden]{display:none}
+.cpd-wa:hover{background:#1ebe5b}
+.cpd-wa [data-l="en"]{display:none}
+.cpd-wa.en [data-l="en"]{display:inline}.cpd-wa.en [data-l="fr"]{display:none}
+@media (max-width:560px){.cpd-wa{padding:12px}.cpd-wa span{display:none!important}}
+</style>
+<script>
+(function(){if(window.parent!==window)return;var w=document.getElementById("cpd-wa");if(!w)return;w.hidden=false;
+var fr="Bonjour, je séjourne dans l'un de vos logements et j'ai une question sur vos services.",en='Hello, I am staying in one of your rentals and I have a question about your services.';
+function upd(){var r=document.getElementById("cpd"),isEn=r?r.classList.contains("is-en"):((navigator.language||"fr").slice(0,2)!=="fr");
+w.classList.toggle("en",isEn);w.href="https://wa.me/33659317272?text="+encodeURIComponent(isEn?en:fr);
+var off=16,bar=document.querySelector(".cart-bar"),ck=document.getElementById("cpd-ck");
+if(bar&&!bar.hidden&&bar.offsetHeight)off=Math.max(off,bar.offsetHeight+12);
+if(ck&&!ck.hidden&&ck.offsetHeight)off=Math.max(off,ck.offsetHeight+24);
+w.style.bottom=off+"px"}
+upd();setInterval(upd,600);})();
 </script>
 <div id="cpd-ck" class="cpd-ck" role="region" aria-label="Cookies" hidden>
 <p><span data-l="fr">Ce site n'utilise ni cookies publicitaires ni mesure d'audience. Seuls vos choix (type de logement, langue, sélection) sont enregistrés sur votre appareil pour le bon fonctionnement du catalogue. <a href="https://extras.conciergeriepriveedeauville.fr/cgv.html#donnees">En savoir plus</a></span><span data-l="en">This site uses no advertising or analytics cookies. Only your choices (rental type, language, selection) are stored on your device so the catalogue works. <a href="https://extras.conciergeriepriveedeauville.fr/cgv.html#donnees">Learn more</a></span></p>
