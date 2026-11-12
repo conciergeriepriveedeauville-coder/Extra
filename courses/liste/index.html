@@ -55,7 +55,7 @@ textarea{resize:vertical}
 .bar .wa{background:var(--wa);color:#fff}
 .bar .ghost{background:transparent;color:#fff;border:1px solid #5d6672}
 .hint{font-size:.85rem;color:var(--muted)}
-.dl{font-size:.9rem;color:var(--muted);margin:-8px 0 16px} .dl a{color:var(--ink);font-weight:600}
+.dl{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#fff;border:1px solid var(--line,#dde1e6);border-radius:14px;padding:12px 14px;margin:-4px 0 16px;font-size:.92rem;color:var(--muted)} .dl a{display:inline-flex;align-items:center;gap:8px;background:#222831;color:#fff;text-decoration:none;font-weight:600;border-radius:999px;padding:10px 16px;white-space:nowrap} .dl span{flex:1;min-width:180px}
 .cpd-ck{bottom:90px!important}
 .tools{position:sticky;top:0;z-index:40;background:var(--paper);padding:10px 0 8px;margin:0 0 6px;border-bottom:1px solid var(--line)}
 .search{position:relative}
@@ -107,7 +107,7 @@ body.en span[lang="en"]{display:inline} body.en span[lang="fr"]{display:none}
 <h1><span lang="fr">Votre liste de courses</span><span lang="en">Your grocery list</span></h1>
 <p class="lede"><span lang="fr">Indiquez les quantités souhaitées, rayon par rayon : nous commandons au drive Carrefour, puis livrons et rangeons tout dans votre logement avant votre arrivée. Une fois terminé, envoyez-nous la liste sur WhatsApp en un clic.</span><span lang="en">Choose the quantities you would like, aisle by aisle: we order from the Carrefour drive, then deliver and put everything away in your rental before you arrive. When you are done, send us the list on WhatsApp in one tap.</span></p>
 
-<p class="dl noprint"><span lang="fr">Vous préférez remplir la liste à la main ? <a href="liste-de-courses.pdf" download>Télécharger la version à imprimer (PDF)</a>, puis envoyez-nous une photo sur WhatsApp.</span><span lang="en">Prefer to fill in the list by hand? <a href="grocery-list.pdf" download>Download the printable version (PDF)</a>, then send us a photo on WhatsApp.</span></p>
+<p class="dl noprint"><span lang="fr"><span><strong>Vous préférez remplir la liste à la main ?</strong> Imprimez-la, cochez, puis envoyez-nous une photo sur WhatsApp.</span><a href="liste-de-courses.pdf" download>⤓ Liste à imprimer (PDF)</a></span><span lang="en"><span><strong>Prefer to fill in the list by hand?</strong> Print it, fill it in, then send us a photo on WhatsApp.</span><a href="grocery-list.pdf" download>⤓ Printable list (PDF)</a></span></p>
 <div class="card">
 <div class="grid">
 <label class="f2"><span><span lang="fr">Prénom et nom</span><span lang="en">Full name</span></span><input data-g="nom" autocomplete="name"></label>
